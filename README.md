@@ -51,7 +51,8 @@ Plusieurs bibliothèques ont été requise afin d'effectuer notre analyse, les p
 
 ### Exécution du code
 
-Nous avons travaillée sous Google Collab, donc il suffit d'importer le fichier .ipynb dedans et le compiler partie par partie. Si à un certain point la précision indiquée n'est pas trouvée, veuillez augmenter le nombre d'itérations à ce niveau là:
+Nous avons travaillée sous Google Collab, donc il suffit d'importer le fichier .ipynb dedans et le compiler partie par partie.
+Si à un certain point la précision indiquée n'est pas trouvée, veuillez augmenter le nombre d'itérations à ce niveau là (section IV):
 
 ```python
 	#calcule la précision, le rappel et le score F1 pour le modèle en utilisant les données de test, 
