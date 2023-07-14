@@ -48,3 +48,26 @@ Plusieurs bibliothèques ont été requise afin d'effectuer notre analyse, les p
 - pandas : Afin travailler avec des dataframe.
 - datetime : Si nous devons intéragir avec des dates.
 - matplotlib : Afin afficher des données de manière plus graphique.
+
+### Exécution du code
+
+Nous avons travaillée sous Google Collab, donc il suffit d'importer le fichier .ipynb dedans et le compiler partie par partie. Si à un certain point la précision indiquée n'est pas trouvée, veuillez augmenter le nombre d'itérations à ce niveau là:
+
+```python
+	#calcule la précision, le rappel et le score F1 pour le modèle en utilisant les données de test, 
+	#et stocke ces résultats ainsi que le score de validation croisée moyenne pour le modèle dans un dictionnaire models_result.
+	from sklearn.linear_model import SGDClassifier
+
+	sgd_clf = SGDClassifier(max_iter=500)
+	sgd_clf.fit(x_train, y_train)
+
+	sgd_pred = sgd_clf.predict(x_test)
+
+	models_result["Model"].append("SGDClassifier")
+	models_result["Cross-Validation-Score"].append(cross_val_score(sgd_clf, x_test, y_test, cv=5, scoring="accuracy").mean())
+	models_result["Precision-score"].append(precision_score(y_test, sgd_pred))
+	models_result["Recall-score"].append(recall_score(y_test, sgd_pred))
+	models_result["F1-score"].append(f1_score(y_test, sgd_pred, average='macro'))
+```
+
+La variable `max_iter` précise cela.
